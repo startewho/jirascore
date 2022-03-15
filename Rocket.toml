@@ -1,0 +1,11 @@
+[default]
+template_dir = "templates/"
+
+[default.databases.sea_orm]
+# Mysql
+# make sure to enable "sqlx-mysql" feature in Cargo.toml, i.e default = ["sqlx-mysql"]
+url = "mysql://root:123.root@hy@localhost/jira"
+
+# Postgres
+# make sure to enable "sqlx-postgres" feature in Cargo.toml, i.e default = ["sqlx-postgres"]
+#url = "postgres://root:root@localhost/rocket_example"
