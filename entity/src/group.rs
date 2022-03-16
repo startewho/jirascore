@@ -1,15 +1,15 @@
 use rocket::serde::{Deserialize, Serialize};
 use sea_orm::entity::prelude::*;
 
-#[derive(Clone, Debug, PartialEq, DeriveEntityModel, Deserialize, Serialize)]
+#[derive(Clone, Debug, PartialEq, DeriveEntityModel, Deserialize, Serialize, FromForm)]
 #[serde(crate = "rocket::serde")]
-#[sea_orm(table_name = "user")]
+#[sea_orm(table_name = "group")]
 pub struct Model {
     #[sea_orm(primary_key)]
     pub id: i32,
-    pub user_name: String,
+    pub name: String,
     #[sea_orm(column_type = "Text")]
-    pub mobile: String,
+    pub des: Option<String>,
 }
 
 #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]

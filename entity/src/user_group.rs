@@ -3,13 +3,12 @@ use sea_orm::entity::prelude::*;
 
 #[derive(Clone, Debug, PartialEq, DeriveEntityModel, Deserialize, Serialize)]
 #[serde(crate = "rocket::serde")]
-#[sea_orm(table_name = "user")]
+#[sea_orm(table_name = "user_group")]
 pub struct Model {
     #[sea_orm(primary_key)]
-    pub id: i32,
-    pub user_name: String,
-    #[sea_orm(column_type = "Text")]
-    pub mobile: String,
+    pub group_id: i32,
+    #[sea_orm(primary_key)]
+    pub user_id: i32,
 }
 
 #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]

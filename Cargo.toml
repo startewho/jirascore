@@ -19,6 +19,8 @@ rocket = { version = "0.5.0-rc.1", features = [
 rocket_dyn_templates = { version = "0.1.0-rc.1", features = [
   "tera",
 ] }
+serde="^1"
+jsonwebtoken = "8.0.1"
 serde_json = { version = "^1" }
 entity = { path = "entity" }
 migration = { path = "migration" }

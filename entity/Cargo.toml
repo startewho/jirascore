@@ -22,5 +22,6 @@ features = [
   #"sqlx-postgres",
   "sqlx-mysql",
   # "sqlx-sqlite",
+  "with-chrono"
 ]
 default-features = false

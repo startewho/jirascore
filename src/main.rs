@@ -17,7 +17,8 @@ use sea_orm_rocket::{Connection, Database};
 
 mod pool;
 use pool::Db;
-
+mod auth;
+mod routes;
 pub use entity::post;
 pub use entity::post::Entity as Post;
 
@@ -180,6 +181,7 @@ fn rocket() -> _ {
             "/",
             routes![new, create, delete, destroy, list, edit, update],
         )
+        .mount("/", routes![ routes::user_route::get_token])
         .register("/", catchers![not_found])
         .attach(Template::fairing())
 }
